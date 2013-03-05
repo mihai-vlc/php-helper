@@ -1,0 +1,316 @@
+
+<!-- saved from url=(0028)http://localhost/php_helper/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>PHP Helper Documentation Page</title>
+		<style>
+			.code {
+				background-color: #e1e1e1;
+				margin: 10px;
+				padding: 5px;
+				border: 1px solid #000;
+			}
+			.box {
+				margin: 5px;
+				padding: 5px;
+				border: 1px solid #e1e1e1;
+			}
+		</style>
+	<style type="text/css"></style></head>
+<body><center><h3> MASTER PHP HELPER v1.0 </h3> </center>	
+<div class="box">
+	Initialize the class
+	<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">"php_helper.php"</span><span style="color: #007700">;<br></span><span style="color: #FF8000">//&nbsp;we&nbsp;initialize&nbsp;the&nbsp;class<br></span><span style="color: #0000BB">$code&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">master_php_helper</span><span style="color: #007700">;</span>
+</span>
+</code></div>
+</div>
+<div class="box">
+	<b>function form_start($return = 0, $action = "?", $method = "GET", $extra = "")</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//simple&nbsp;call
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">form_start</span><span style="color: #007700">();
+<br></span><span style="color: #FF8000">//&nbsp;we&nbsp;can&nbsp;use&nbsp;the&nbsp;parameters&nbsp;like&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">form_start</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"login.php"</span><span style="color: #007700">,</span><span style="color: #DD0000">"POST"</span><span style="color: #007700">,</span><span style="color: #DD0000">"form1"</span><span style="color: #007700">);
+<br></span><span style="color: #FF8000">//&nbsp;but&nbsp;we&nbsp;can&nbsp;also&nbsp;do&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">form_start</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"login.php"</span><span style="color: #007700">,</span><span style="color: #DD0000">"POST"</span><span style="color: #007700">,array(</span><span style="color: #DD0000">"class"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"form2"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"form_1"</span><span style="color: #007700">));
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code">&lt;form action="?" method="GET"&gt;<br>
+&lt;form action="login.php" method="POST" class="form1"&gt;<br>
+&lt;form action="login.php" method="POST" class="form2" id="form_1"&gt;<br>
+</div></div>
+<div class="box">
+	<b>	function form_input($return = 0, $type="text", $name='input1', $extra = "", $endform = 0)</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//simple&nbsp;call
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">form_input</span><span style="color: #007700">();
+<br></span><span style="color: #FF8000">//&nbsp;we&nbsp;can&nbsp;use&nbsp;the&nbsp;parameters&nbsp;like&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">form_input</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"text"</span><span style="color: #007700">,</span><span style="color: #DD0000">"username"</span><span style="color: #007700">,</span><span style="color: #DD0000">"form1"</span><span style="color: #007700">);
+<br></span><span style="color: #FF8000">//&nbsp;but&nbsp;we&nbsp;can&nbsp;also&nbsp;do&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">form_input</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"textarea"</span><span style="color: #007700">,</span><span style="color: #DD0000">"country"</span><span style="color: #007700">,array(</span><span style="color: #DD0000">"id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"text1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"value"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;the&nbsp;devault&nbsp;value"</span><span style="color: #007700">));
+<br></span><span style="color: #FF8000">//&nbsp;submit&nbsp;with&nbsp;endform
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">form_input</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"submit"</span><span style="color: #007700">,</span><span style="color: #DD0000">""</span><span style="color: #007700">,</span><span style="color: #DD0000">""</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">);
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code">&lt;input type="text" name="input1"&gt;<br>
+&lt;input type="text" name="username" class="form1"&gt;<br>
+&lt;textarea name="country" id="text1"&gt;This is the devault value&lt;/textarea&gt;<br>
+&lt;input type="submit" name=""&gt;<br>
+&lt;/form&gt;</div></div>
+<div class="box">
+	<b>function form_end($return = 0,$submit = 0, $extra = "")</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//simple&nbsp;call
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">form_end</span><span style="color: #007700">();
+<br></span><span style="color: #FF8000">//&nbsp;we&nbsp;can&nbsp;use&nbsp;the&nbsp;parameters&nbsp;like&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">form_end</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #DD0000">"submit1"</span><span style="color: #007700">);
+<br></span><span style="color: #FF8000">//&nbsp;but&nbsp;we&nbsp;can&nbsp;also&nbsp;do&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">form_end</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">,array(</span><span style="color: #DD0000">"id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"text1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"value"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Register"</span><span style="color: #007700">));
+<br>
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code"><br>
+&lt;/form&gt;<br>
+&lt;input type="submit" class="submit1"&gt;<br>
+&lt;/form&gt;<br>
+&lt;input type="submit" id="text1" value="Register"&gt;<br>
+&lt;/form&gt;<br>
+</div></div>
+<div class="box">
+	<b>function table_start($return = 0, $extra = "", $rows = 1, $cols = 1, $data = '', $extra2 = '', $extra3 = '')</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//simple&nbsp;call
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">table_start</span><span style="color: #007700">();
+<br></span><span style="color: #FF8000">//&nbsp;we&nbsp;can&nbsp;use&nbsp;the&nbsp;parameters&nbsp;like&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">table_start</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"table"</span><span style="color: #007700">);
+<br></span><span style="color: #FF8000">//&nbsp;but&nbsp;we&nbsp;can&nbsp;also&nbsp;do&nbsp;this
+<br></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">0&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"This"</span><span style="color: #007700">,</span><span style="color: #DD0000">"is"</span><span style="color: #007700">,</span><span style="color: #DD0000">"a"</span><span style="color: #007700">),</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"very"</span><span style="color: #007700">,</span><span style="color: #DD0000">"nice"</span><span style="color: #007700">,</span><span style="color: #DD0000">"table"</span><span style="color: #007700">));
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">table_start</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,array(</span><span style="color: #DD0000">"id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"table1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"cellspacing"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"0"</span><span style="color: #007700">),</span><span style="color: #0000BB">2</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">,</span><span style="color: #0000BB">$data</span><span style="color: #007700">,</span><span style="color: #DD0000">"row1"</span><span style="color: #007700">,</span><span style="color: #DD0000">"col1"</span><span style="color: #007700">);
+<br>
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code"><pre>&lt;table&gt;<br>
+&lt;table class="table"&gt;<br>
+&lt;table id="table1" cellspacing="0"&gt;<br>
+	&lt;tr class="row1"&gt;<br>
+		&lt;td class="col1"&gt;<br>
+This<br>
+		&lt;/td&gt;<br>
+		&lt;td class="col1"&gt;<br>
+is<br>
+		&lt;/td&gt;<br>
+		&lt;td class="col1"&gt;<br>
+a<br>
+		&lt;/td&gt;<br>
+	&lt;/tr&gt;<br>
+	&lt;tr class="row1"&gt;<br>
+		&lt;td class="col1"&gt;<br>
+very<br>
+		&lt;/td&gt;<br>
+		&lt;td class="col1"&gt;<br>
+nice<br>
+		&lt;/td&gt;<br>
+		&lt;td class="col1"&gt;<br>
+table<br>
+		&lt;/td&gt;<br>
+	&lt;/tr&gt;<br>
+&lt;/table&gt;<br>
+</pre></div></div>
+<div class="box">
+	<b>function table_row($return = 0, $extra = '', $cols = 1, $data = '',$extra2='', $endtable = 0)</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//&nbsp;we&nbsp;can&nbsp;add&nbsp;a&nbsp;row&nbsp;to&nbsp;the&nbsp;table&nbsp;like&nbsp;this
+<br></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">);
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">table_row</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,array(</span><span style="color: #DD0000">"id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"row1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"class"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"row1"</span><span style="color: #007700">),</span><span style="color: #0000BB">3</span><span style="color: #007700">,</span><span style="color: #0000BB">$data</span><span style="color: #007700">,</span><span style="color: #DD0000">"col1"</span><span style="color: #007700">);
+<br>
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code"><pre>	&lt;tr id="row1" class="row1"&gt;<br>
+		&lt;td class="col1"&gt;<br>
+1<br>
+		&lt;/td&gt;<br>
+		&lt;td class="col1"&gt;<br>
+2<br>
+		&lt;/td&gt;<br>
+		&lt;td class="col1"&gt;<br>
+3<br>
+		&lt;/td&gt;<br>
+	&lt;/tr&gt;<br>
+</pre></div></div>
+<div class="box">
+	<b>function table_end($return = 0)</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//&nbsp;we&nbsp;can&nbsp;end&nbsp;the&nbsp;table&nbsp;like&nbsp;this(or&nbsp;you&nbsp;can&nbsp;do&nbsp;it&nbsp;with&nbsp;the&nbsp;previous&nbsp;function)
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">table_end</span><span style="color: #007700">();
+<br>
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code"><pre>&lt;/table&gt;</pre></div></div>
+<div class="box">
+	<b>function img($return = 0, $url = '', $extra = '')</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//&nbsp;adding&nbsp;an&nbsp;image&nbsp;it's&nbsp;simple
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">img</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"/folder/img.jpg"</span><span style="color: #007700">,</span><span style="color: #DD0000">"img1"</span><span style="color: #007700">);
+<br></span><span style="color: #FF8000">//&nbsp;but&nbsp;we&nbsp;can&nbsp;also&nbsp;do&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">img</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"/folder/img.jpg"</span><span style="color: #007700">,array(</span><span style="color: #DD0000">"id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"img1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"alt"</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">"Image"</span><span style="color: #007700">));
+<br>
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code"><pre>&lt;img src="/folder/img.jpg" class="img1"&gt;<br>
+&lt;img src="/folder/img.jpg" id="img1" alt="Image"&gt;<br>
+</pre></div></div>
+<div class="box">
+	<b>function js($return = 0,$file = '',$extra = '',$code = '')</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//&nbsp;simple&nbsp;call
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">();
+<br></span><span style="color: #FF8000">//&nbsp;we&nbsp;can&nbsp;use&nbsp;the&nbsp;arguments&nbsp;like&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"/folder/script.js"</span><span style="color: #007700">,</span><span style="color: #DD0000">"text/javascript"</span><span style="color: #007700">);
+<br></span><span style="color: #FF8000">//&nbsp;or&nbsp;we&nbsp;can&nbsp;do&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">""</span><span style="color: #007700">,</span><span style="color: #DD0000">"text/javascript"</span><span style="color: #007700">,</span><span style="color: #DD0000">"document.write(\"Hello&nbsp;!\")"</span><span style="color: #007700">);
+<br></span><span style="color: #FF8000">//&nbsp;but&nbsp;we&nbsp;can&nbsp;also&nbsp;do&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"/folder/script.js"</span><span style="color: #007700">,array(</span><span style="color: #DD0000">"type"</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">"text/javascript"</span><span style="color: #007700">,</span><span style="color: #DD0000">"defer"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">),</span><span style="color: #DD0000">"document.write(\"Hello&nbsp;!\")"</span><span style="color: #007700">);
+<br>
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code"><pre>&lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt;<br>
+&lt;script src="/folder/script.js" type="text/javascript"&gt;&lt;/script&gt;<br>
+&lt;script type="text/javascript"&gt;document.write("Hello !")&lt;/script&gt;<br>
+&lt;script src="/folder/script.js" type="text/javascript" defer="1"&gt;document.write("Hello !")&lt;/script&gt;<br>
+</pre></div></div>
+<div class="box">
+	<b>function linkrel($return = 0,$extra = '')</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//&nbsp;simple&nbsp;call
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">linkrel</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,array(</span><span style="color: #DD0000">"rel"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"stylesheet"</span><span style="color: #007700">,</span><span style="color: #DD0000">"href"</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"style.css"</span><span style="color: #007700">));
+<br>
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code"><pre>&lt;link rel="stylesheet" href="style.css"&gt;<br>
+</pre></div></div>
+<div class="box">
+	<b>function css($return = 0, $file = '',$code ='',$extra = '')</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//&nbsp;simple&nbsp;call
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">css</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"style.css"</span><span style="color: #007700">);
+<br></span><span style="color: #FF8000">//&nbsp;or&nbsp;like&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">css</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"style.css"</span><span style="color: #007700">,</span><span style="color: #DD0000">""</span><span style="color: #007700">,array(</span><span style="color: #DD0000">"id"</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">"st1"</span><span style="color: #007700">));
+<br></span><span style="color: #FF8000">//&nbsp;we&nbsp;can&nbsp;also&nbsp;do&nbsp;this
+<br></span><span style="color: #0000BB">$css_code&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">".div1&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;green;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;border:&nbsp;1px&nbsp;solid&nbsp;black;
+<br>}"</span><span style="color: #007700">;
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">css</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">""</span><span style="color: #007700">,</span><span style="color: #0000BB">$css_code</span><span style="color: #007700">,</span><span style="color: #DD0000">"text/css"</span><span style="color: #007700">);
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code"><pre>&lt;link rel="stylesheet" href="style.css"&gt;<br>
+&lt;link rel="stylesheet" href="style.css" id="st1"&gt;<br>
+&lt;style type="text/css"&gt;<br>
+.div1 {<br>
+	color: green;<br>
+	border: 1px solid black;<br>
+}<br>
+&lt;/style&gt;<br>
+</pre></div></div>
+
+<div class="box">
+	<b>function favicon($return = 0, $file = '',$extra='')</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//&nbsp;simple&nbsp;call
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">favicon</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"favicon.ico"</span><span style="color: #007700">);
+<br></span><span style="color: #FF8000">//&nbsp;or&nbsp;like&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">favicon</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"favicon.ico"</span><span style="color: #007700">,</span><span style="color: #DD0000">"fav1"</span><span style="color: #007700">);
+<br>
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code"><pre>&lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon"&gt;<br>
+&lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon" id="fav1"&gt;<br>
+</pre></div></div>
+
+<div class="box">
+	<b>function link($return = 0, $url = '',$name = '', $extra = '')</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//&nbsp;simple&nbsp;call
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">link</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"/page.php"</span><span style="color: #007700">,</span><span style="color: #DD0000">"Contact"</span><span style="color: #007700">);
+<br></span><span style="color: #FF8000">//&nbsp;or&nbsp;like&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">link</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"/page.php"</span><span style="color: #007700">,</span><span style="color: #DD0000">"Contact"</span><span style="color: #007700">,</span><span style="color: #DD0000">"link1"</span><span style="color: #007700">);
+<br></span><span style="color: #FF8000">//&nbsp;we&nbsp;can&nbsp;also&nbsp;do&nbsp;this
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">link</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"/page.php"</span><span style="color: #007700">,</span><span style="color: #DD0000">"Contact"</span><span style="color: #007700">,array(</span><span style="color: #DD0000">"class"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"link1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"link_1"</span><span style="color: #007700">));
+<br>
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code"><pre>&lt;a href="/page.php"&gt;Contact&lt;/a&gt;<br>
+&lt;a href="/page.php" class="link1"&gt;Contact&lt;/a&gt;<br>
+&lt;a href="/page.php" class="link1" id="link_1"&gt;Contact&lt;/a&gt;<br>
+</pre></div></div>
+
+<div class="box">
+	<b>function code($return =0, $html)</b>
+	<br><br>
+	<i>Examples:</i><br>
+<div class="code"> <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #FF8000">//&nbsp;simple&nbsp;call
+<br></span><span style="color: #0000BB">$code</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">code</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"Hello&lt;br/&gt;World"</span><span style="color: #007700">);
+<br>
+<br></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code> </div>Output:<div class="code"><pre>Hello&lt;br/&gt;World</pre></div></div>
+
+
+
+
+
+<br><br> <center> Mihai Ionut Vilcu (ionutvmi@gmail.com) Jan - 2013 </center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
